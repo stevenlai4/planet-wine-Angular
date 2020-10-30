@@ -1,0 +1,65 @@
+h1 {
+  font-size: 40px;
+  color: #444444;
+}
+
+.sideArticle {
+  @include flex-row;
+  article {
+    @include basic-spacing;
+    h2 {
+      font-weight: bold;
+      font-size: 1rem;
+      color: $primary-color;
+    }
+
+    &:nth-of-type(1) {
+      align-self: flex-start;
+      display: none;
+
+      @media screen and (min-width: map-get($breakpoint, tablet)) {
+        display: block;
+        width: 41rem;
+      }
+      @media screen and (min-width: map-get($breakpoint, desktop)) {
+        width: 33rem;
+      }
+      div {
+        @include basic-spacing;
+        > * {
+          margin: 0.5rem 0;
+        }
+      }
+    }
+
+    &:nth-of-type(2) {
+      app-shop-item {
+        @include flex-row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+.imgArticle {
+  color: black;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../../../assets/img/shop-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3rem 0;
+  > * {
+    @include basic-spacing;
+  }
+  h5 {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,28 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+
+div {
+  h2 {
+    font-weight: bold;
+    font-size: 1rem;
+    color: $primary-color;
+  }
+
+  @include basic-spacing;
+  width: 100%;
+  text-align: center;
+  > * {
+    margin: 0.5rem;
+  }
+  @media screen and (min-width: map-get($breakpoint, tablet)) {
+    width: 45%;
+  }
+  @media screen and (min-width: map-get($breakpoint, desktop)) {
+    width: 30%;
+  }
+
+  img {
+    max-width: 10rem;
+    max-height: 15rem;
+  }
+}

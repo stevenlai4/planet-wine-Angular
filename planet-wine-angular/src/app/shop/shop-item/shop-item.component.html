@@ -1,0 +1,15 @@
+<div *ngFor="let productItem of productItems">
+  <img class="shop-img" [src]="productItem.image" [alt]="productItem.name" />
+  <h2>{{ productItem.name }}</h2>
+  <p>${{ productItem.price }}</p>
+
+  <input
+    type="number"
+    id="wine{{ productItem.id }}"
+    name="wine{{ productItem.id }}"
+    min="0"
+    max="100"
+    value="0"
+  />
+  <button id="wineButton{{ productItem.id }}" class="addButton">Add</button>;
+</div>
