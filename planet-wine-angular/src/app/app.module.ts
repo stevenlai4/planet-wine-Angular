@@ -8,7 +8,13 @@ import { ShopComponent } from './shop/shop.component';
 import { ShopItemComponent } from './shop/shop-item/shop-item.component';
 
 @NgModule({
-  declarations: [AppComponent, MainNavComponent, MainFooterComponent, ShopComponent, ShopItemComponent],
+  declarations: [
+    AppComponent,
+    MainNavComponent,
+    MainFooterComponent,
+    ShopComponent,
+    ShopItemComponent,
+  ],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
