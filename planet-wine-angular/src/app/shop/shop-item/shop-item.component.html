@@ -9,7 +9,14 @@
     name="wine{{ productItem.id }}"
     min="0"
     max="100"
-    value="0"
+    [value]="fillInput(productItem.id)"
+    #inputQuantity
   />
-  <button id="wineButton{{ productItem.id }}" class="addButton">Add</button>;
+  <button
+    id="wineButton{{ productItem.id }}"
+    (click)="addQuantityEvent(productItem.id, inputQuantity)"
+    class="addButton"
+  >
+    Add</button
+  >;
 </div>
