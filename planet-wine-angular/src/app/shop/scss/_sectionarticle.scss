@@ -4,9 +4,15 @@ h1 {
 }
 
 .sideArticle {
-  @include flex-row;
+  $grid-rows: 1;
+  $grid-cols: repeat(3, 1fr);
+  $grid-max-cols-per-row: 3;
+  $grid-row-gap: 0;
+  $grid-col-gap: 0;
+
+  display: flex;
   article {
-    @include basic-spacing;
+    // @include basic-spacing;
     h2 {
       font-weight: bold;
       font-size: 1rem;
@@ -19,10 +25,10 @@ h1 {
 
       @media screen and (min-width: map-get($breakpoint, tablet)) {
         display: block;
-        width: 41rem;
+        width: 30%;
       }
-      @media screen and (min-width: map-get($breakpoint, desktop)) {
-        width: 33rem;
+      @media screen and (min-width: map-get($breakpoint, tablet)) {
+        width: 20%;
       }
       div {
         @include basic-spacing;
@@ -33,11 +39,15 @@ h1 {
     }
 
     &:nth-of-type(2) {
-      app-shop-item {
-        @include flex-row;
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: flex-start;
+      width: 100%;
+      @include grid-creator(1, 1, 1, 0, 0);
+
+      @media screen and (min-width: map-get($breakpoint, tablet)) {
+        @include grid-creator(1, repeat(2, 1fr), 2, 0, 0);
+      }
+
+      @media screen and (min-width: map-get($breakpoint, desktop)) {
+        @include grid-creator(1, repeat(3, 1fr), 3, 0, 0);
       }
     }
   }

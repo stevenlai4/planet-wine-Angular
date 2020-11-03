@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopService } from '../services/shop.service';
+import { Shop } from '../shop/shop.model';
 
 @Component({
   selector: 'app-shop',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scss/shop.component.scss'],
 })
 export class ShopComponent implements OnInit {
-  constructor() {}
+  shopList: Shop[] = [];
 
-  ngOnInit(): void {}
+  constructor(private shopService: ShopService) {}
+
+  ngOnInit(): void {
+    this.shopList = this.shopService.getShop();
+  }
 }

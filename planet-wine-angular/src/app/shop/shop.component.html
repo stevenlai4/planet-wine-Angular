@@ -54,7 +54,9 @@
     </article>
 
     <article id="wineDisplay">
-      <app-shop-item></app-shop-item>
+      <div *ngFor="let shop of shopList">
+        <app-shop-item [shopItem]="shop"></app-shop-item>
+      </div>
     </article>
   </div>
 </section>
