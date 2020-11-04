@@ -6,7 +6,13 @@ import { ShopItemDetailComponent } from './shop/shop-item-detail/shop-item-detai
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/shop',
+    pathMatch: 'full',
+  },
+  {
     path: 'shop',
+
     component: ShopComponent,
   },
   {
