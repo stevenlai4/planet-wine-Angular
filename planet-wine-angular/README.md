@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Citation
+
+- 2018 Zinfandel. (n.d.). Retrieved November 04, 2020, from https://www.justinwine.com/shop/wines/all/2018-zinfandel
+- 750 Group, H. (2020). Frog's Leap Winery. Retrieved November 04, 2020, from https://store.frogsleap.com/
