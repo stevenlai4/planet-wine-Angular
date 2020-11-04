@@ -1,12 +1,24 @@
+<div class="back-to-shop">
+  <i class="fa fa-caret-left"></i>
+  <a class="cont-shopping" routerLink="/shop"> Back To Shop</a>
+</div>
 <div class="container content detail">
   <div class="detail-grid row">
-    <div class="col-5 text-center">
+    <div class="col-lg-5 col-12 text-center">
       <img [src]="shopItem.image" [alt]="shopItem.name" />
     </div>
-    <div class="col-7">
-      <h2 class="name">{{ shopItem.name }}</h2>
-      <p class="type">{{ shopItem.type }}</p>
-      <p class="description">{{ shopItem.description }}</p>
+    <div
+      class="col-lg-7 col-12 text-lg-left text-center d-lg-flex align-content-lg-center flex-lg-wrap"
+    >
+      <div class="name w-100">
+        <h2>{{ shopItem.name }}</h2>
+      </div>
+      <div class="type w-100">
+        <p>{{ shopItem.type }}</p>
+      </div>
+      <div class="description w-100">
+        <p>{{ shopItem.description }}</p>
+      </div>
     </div>
   </div>
 </div>
