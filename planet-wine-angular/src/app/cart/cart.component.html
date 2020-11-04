@@ -10,6 +10,7 @@
       <div class="cart-empty" style="text-align: center">
         <p>Your Cart Is Empty</p>
       </div>
+      <hr />
     </div>
     <div *ngIf="cartItems.length > 0">
       <div *ngFor="let item of cartItems">
@@ -24,7 +25,7 @@
         <i class="fa fa-caret-left"></i>
       </div>
       <div class="p-2 continous-btn align-self-center">
-        <a class="cont-shopping" href="#"> Continous Shopping</a>
+        <a class="cont-shopping" routerLink="/shop"> Continous Shopping</a>
       </div>
     </div>
     <div class="p-2 ml-auto text-center">

@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -9,17 +8,8 @@ import { ShopComponent } from './shop/shop.component';
 import { ShopItemComponent } from './shop/shop-item/shop-item.component';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
-
-const routes: Routes = [
-  {
-    path: 'shop',
-    component: ShopComponent,
-  },
-  {
-    path: 'cart',
-    component: CartComponent,
-  },
-];
+import { AppRoutingModule } from './app-routing.module';
+import { ShopItemDetailComponent } from './shop/shop-item-detail/shop-item-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +20,9 @@ const routes: Routes = [
     ShopItemComponent,
     CartComponent,
     CartItemComponent,
+    ShopItemDetailComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
