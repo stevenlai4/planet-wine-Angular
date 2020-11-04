@@ -1,0 +1,28 @@
+$primary-color: #c7b198;
+
+.product-item,
+.product-price {
+  max-width: 100%;
+  @media screen and (min-width: 768px) {
+    width: 25%;
+  }
+}
+
+hr {
+  width: 85%;
+}
+
+.product-price {
+  .total-price {
+    margin-right: 0;
+  }
+}
+
+.item-title {
+  color: $primary-color;
+}
+
+.quantity-box {
+  height: 40px;
+  width: 40px;
+}
