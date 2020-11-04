@@ -5,7 +5,34 @@
     </div>
   </header>
 
-  <article class="my-5">
-    <app-cart-item></app-cart-item>
+  <article class="container my-5">
+    <div *ngIf="cartItems.length === 0">
+      <div class="cart-empty" style="text-align: center">
+        <p>Your Cart Is Empty</p>
+      </div>
+    </div>
+    <div *ngIf="cartItems.length > 0">
+      <div *ngFor="let item of cartItems">
+        <app-cart-item [cartItem]="item"></app-cart-item>
+      </div>
+    </div>
   </article>
+
+  <div class="container d-sm-flex justify-content-between-sm">
+    <div class="d-none d-sm-block d-sm-flex">
+      <div class="p-2 continous-btn align-self-center">
+        <i class="fa fa-caret-left"></i>
+      </div>
+      <div class="p-2 continous-btn align-self-center">
+        <a class="cont-shopping" href="#"> Continous Shopping</a>
+      </div>
+    </div>
+    <div class="p-2 ml-auto text-center">
+      <a href="checkout.html">
+        <button type="button" class="btn proceed-btn">
+          Proceed To Checkout
+        </button>
+      </a>
+    </div>
+  </div>
 </section>

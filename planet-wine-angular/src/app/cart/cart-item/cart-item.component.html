@@ -1,40 +1,25 @@
-<div class="container">
-  <div
-    class="d-flex my-4 flex-column flex-md-row align-items-center justify-content-around"
-  >
-    <div class="product-item text-center">
-      <img src="${productObj[key].image}" alt="mall" />
+<div
+  class="d-flex my-4 flex-column flex-md-row align-items-center justify-content-around"
+>
+  <div class="product-item text-center">
+    <img [src]="cartItem.image" alt="mall" />
+  </div>
+  <div class="product-item text-center">
+    <p class="item-title my-4">{{ cartItem.name }}</p>
+  </div>
+  <div class="product-item">
+    <div class="d-flex flex-row align-items-center justify-content-center">
+      <p class="price mx-4">${{ cartItem.price }}</p>
+      <i class="fa fa-plus-circle quantity-btn quantity-plus"></i>
+      <input type="text" class="quantity-box mx-3" [value]="cartItem.qty" />
+      <i class="fa fa-minus-circle quantity-btn quantity-minus"></i>
     </div>
-    <div class="product-item text-center">
-      <p class="item-title my-4">{name}</p>
-    </div>
-    <div class="product-item">
-      <div class="d-flex flex-row align-items-center justify-content-center">
-        <p class="price mx-4">$${productObj[key].price}</p>
-        <i
-          class="fas fa-plus-circle quantity-btn quantity-plus"
-          data-wine-id="${key}"
-        ></i>
-        <input
-          type="text"
-          class="quantity-box mx-3"
-          name="wine${key}"
-          value="${localStorage.getItem(
-                key
-            )}"
-        />
-        <i
-          class="fas fa-minus-circle quantity-btn quantity-minus"
-          data-wine-id="${key}"
-        ></i>
-      </div>
-    </div>
+  </div>
 
-    <div class="product-price">
-      <p id="total${key}" class="price total-price my-4 item-total">
-        $${( productObj[key].price * localStorage.getItem(key) ).toFixed(2)}
-      </p>
-    </div>
+  <div class="product-price">
+    <p class="price total-price my-4 item-total">
+      ${{ (cartItem.price * cartItem.qty).toFixed(2) }}
+    </p>
   </div>
 </div>
 
