@@ -1,0 +1,15 @@
+.detail {
+  display: flex;
+
+  .detail-grid {
+    align-self: center;
+  }
+
+  img {
+    width: 350px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+}

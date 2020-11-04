@@ -1,6 +1,12 @@
-<div>
-  <img [src]="shopItem.image" [alt]="shopItem.name" />
-  <h3>{{ shopItem.name }}</h3>
-  <p>{{ shopItem.type }}</p>
-  <p>{{ shopItem.description }}</p>
+<div class="container content detail">
+  <div class="detail-grid row">
+    <div class="col-5 text-center">
+      <img [src]="shopItem.image" [alt]="shopItem.name" />
+    </div>
+    <div class="col-7">
+      <h2 class="name">{{ shopItem.name }}</h2>
+      <p class="type">{{ shopItem.type }}</p>
+      <p class="description">{{ shopItem.description }}</p>
+    </div>
+  </div>
 </div>
