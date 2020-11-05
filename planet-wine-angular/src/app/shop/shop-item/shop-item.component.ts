@@ -13,21 +13,17 @@ export class ShopItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // addToCart(product: Shop, input: any) {
-  //   this.data.sendData(product, input.value);
-  // }
-
   // Fill in value that have already been saved
-  fillInput(itemId: number): string {
-    if (localStorage.getItem(itemId.toString())) {
-      return localStorage.getItem(itemId.toString());
+  fillInput(): string {
+    if (localStorage.getItem(this.shopItem.id.toString())) {
+      return localStorage.getItem(this.shopItem.id.toString());
     }
 
     return '0';
   }
 
   // Click Event Listener for add button
-  addQuantityEvent(itemId: number, input: any) {
+  addQuantityEvent(input: any) {
     // Eliminating leading zero when there's one
     let quantity: number = Number(input.value);
     //Validation
@@ -41,8 +37,10 @@ export class ShopItemComponent implements OnInit {
       );
       if (quantity < 0) {
         input.value = 0;
+        localStorage.setItem(this.shopItem.id.toString(), input.value);
       } else {
         input.value = 100;
+        localStorage.setItem(this.shopItem.id.toString(), input.value);
       }
     } else if (!Number.isInteger(Number(quantity))) {
       window.alert(
@@ -52,9 +50,9 @@ export class ShopItemComponent implements OnInit {
     } else {
       //Add item
       if (quantity == 0) {
-        localStorage.removeItem(itemId.toString());
+        localStorage.removeItem(this.shopItem.id.toString());
       } else if (quantity > 0 && quantity <= 100) {
-        localStorage.setItem(itemId.toString(), quantity.toString());
+        localStorage.setItem(this.shopItem.id.toString(), quantity.toString());
       }
     }
   }

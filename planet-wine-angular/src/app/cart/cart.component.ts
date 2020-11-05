@@ -11,17 +11,11 @@ export class CartComponent implements OnInit {
   shopList: Shop[] = [];
   cartItems = [];
 
-  constructor(
-    /*private data: CartItemService*/
-    private shopService: ShopService
-  ) {
+  constructor(private shopService: ShopService) {
     console.log(this.cartItems);
   }
 
   ngOnInit(): void {
-    // this.data.getData().subscribe((product: any) => {
-    //   this.addProduct(product);
-    // });
     this.shopList = this.shopService.getShop();
     this.addCartItems();
   }
@@ -43,28 +37,4 @@ export class CartComponent implements OnInit {
       }
     }
   }
-
-  // addProduct(product: any) {
-  //   let productExists = false;
-
-  //   for (let i in this.cartItems) {
-  //     if (this.cartItems[i].id === product.id) {
-  //       this.cartItems[i].qty++;
-  //       productExists = true;
-  //       break;
-  //     }
-  //   }
-
-  //   if (!productExists) {
-  //     this.cartItems.push({
-  //       id: product.id,
-  //       name: product.name,
-  //       type: product.type,
-  //       price: product.price,
-  //       description: product.description,
-  //       image: product.image,
-  //       qty: product.qty,
-  //     });
-  //   }
-  // }
 }

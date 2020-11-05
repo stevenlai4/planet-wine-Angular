@@ -11,13 +11,13 @@
     name="wine{{ shopItem.id }}"
     min="0"
     max="100"
-    [value]="fillInput(shopItem.id)"
+    [value]="fillInput()"
     #inputQuantity
   />
   <button
     id="wineButton{{ shopItem.id }}"
     type="button"
-    (click)="addQuantityEvent(shopItem.id, inputQuantity)"
+    (click)="addQuantityEvent(inputQuantity)"
     class="addButton"
   >
     Add
