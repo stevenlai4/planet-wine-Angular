@@ -10,15 +10,27 @@
   <div class="product-item">
     <div class="d-flex flex-row align-items-center justify-content-center">
       <p class="price mx-4">${{ cartItem.price }}</p>
-      <i class="fa fa-plus-circle quantity-btn quantity-plus"></i>
-      <input type="text" class="quantity-box mx-3" [value]="cartItem.qty" />
-      <i class="fa fa-minus-circle quantity-btn quantity-minus"></i>
+      <i
+        class="fa fa-plus-circle quantity-btn quantity-plus"
+        (click)="totalPrice = increaseQty(inputQuantity)"
+      ></i>
+      <input
+        type="text"
+        class="quantity-box mx-3"
+        (change)="totalPrice = insertInput($event)"
+        [value]="cartItem.qty"
+        #inputQuantity
+      />
+      <i
+        class="fa fa-minus-circle quantity-btn quantity-minus"
+        (click)="totalPrice = decreaseQty(inputQuantity)"
+      ></i>
     </div>
   </div>
 
   <div class="product-price">
     <p class="price total-price my-4 item-total">
-      ${{ (cartItem.price * cartItem.qty).toFixed(2) }}
+      ${{ totalPrice.toFixed(2) }}
     </p>
   </div>
 </div>
